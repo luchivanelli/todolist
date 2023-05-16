@@ -1,6 +1,6 @@
-import Title from './components/Title'
+import Title from './components/Titulo'
 import Lista from './components/Lista'
-import './components/styles.css'
+import './sass/styles.scss'
 
 const App = ()=> {
   return (

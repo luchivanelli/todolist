@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap');
+
+$color-1: #F5A65B;
+$color-2: #C1CC99;
+$color-3: #8BBD8B;
+$color-4: #6CAE75;
+$color-5: #8B9474;
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-4;
+}
+
+.titulo {
+    font-size: 36px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+.seccion {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #F5A65B;
+
+    &__agregar {
+        font-size: 18px;
+
+        & label {
+            margin-right: 5px;
+            font-weight: 500;
+        }
+
+        & input {
+            margin: 2px;
+            padding: 2px;
+            border: none;
+            border-bottom: 2px solid $color-4;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 500;
+            
+            &:focus {
+                outline: none;
+            }
+        }
+
+        & button {
+            border: 3px solid $color-2;
+            border-radius: 10px;
+            padding: 5px 20px;
+            font-size: 16px;
+            background: $color-2;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px auto;
+            display: block;
+            transition: all 0.6s;
+
+            &:hover {
+                background-color: $color-1;
+                transition: all 0.3s;
+            }
+        }
+    }
+    
+    &__filtros {
+        display: flex;
+        flex-direction: column;
+        
+        & button {
+            border: none;
+            font-size: 16px;
+            background-color: transparent;
+            cursor: pointer;
+            padding: 5px;
+            border-bottom: 2px solid;
+            font-weight: 500;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__info {
+        text-align: justify;
+        margin: 30px 0 0;
+    }
+
+    &__tareas {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        border-top: 2px solid;
+        width: 100%;
+        padding: 20px 0 0;
+        
+        &__tarea {
+            display: flex;
+            gap: 10px;
+            font-size: 18px;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            cursor: pointer;
+            font-weight: 500;
+            
+            & li {
+                list-style: none;
+            }
+
+            & button {
+                border: 3px solid $color-2;
+                border-radius: 10px;
+                padding: 5px 20px;
+                font-size: 16px;
+                background: $color-2;
+                font-weight: 600;
+                cursor: pointer;
+                margin: 10px auto;
+                display: block;
+                transition: all 0.6s;
+
+                &:hover {
+                    background-color: $color-1;
+                    transition: all 0.3s;
+                }
+            }
+
+            .tarea-completada {
+                text-decoration: line-through;
+            }
+        }
+
+        .ocultar-tarea {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .titulo {
+        font-size: 46px;
+    }
+    
+    .seccion {
+        width: 70%;
+        padding: 30px;
+    
+        &__agregar {
+            font-size: 24px;
+    
+            & label {
+                margin-right: 5px;
+            }
+    
+            & input {
+                margin: 5px;
+                padding: 5px;
+                font-size: 22px;
+            }
+    
+            & button {
+                padding: 5px 30px;
+                font-size: 22px;
+                margin: 20px auto;
+            }
+        }
+        
+        &__filtros {
+            flex-direction: row;
+            gap: 30px;
+            
+            & button {
+                font-size: 20px;
+            }
+        }
+    
+        &__info {
+            font-size: 20px;
+        }
+    
+        &__tareas {
+            gap: 20px;
+            padding: 20px 0 0;
+            
+            &__tarea {
+                gap: 20px;
+                font-size: 24px;
+    
+                & button {
+                    border: 3px solid $color-2;
+                    border-radius: 10px;
+                    padding: 5px 30px;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {  
+    .seccion { 
+        &__agregar {
+            & button {
+                margin: 30px 5px;
+                display: inline;
+            }
+        }
+        
+        &__filtros {
+            margin-bottom: 20px;
+        }
+    }
+}
+

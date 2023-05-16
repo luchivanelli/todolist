@@ -1,0 +1,13 @@
+.tarea {
+  font-size: 20px;
+}
+
+.ocultar-tarea {
+  display: none;
+}
+
+.tarea-completada {
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=styles.css.map */

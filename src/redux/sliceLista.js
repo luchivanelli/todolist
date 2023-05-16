@@ -17,9 +17,11 @@ const sliceLista = createSlice({
 
     reducers: {
         agregarTarea: (state,action) => {
-            const {nombre, completado} = action.payload
-            state.contador++
-            state.tareas.push({nombre, completado})
+            if (action.payload.nombre !== '') {
+                const {nombre, completado} = action.payload
+                state.contador++
+                state.tareas.push({nombre, completado})
+            }
         },
         eliminarTarea: (state,action) => {
             const nombre = action.payload
@@ -33,16 +35,9 @@ const sliceLista = createSlice({
 
             filterState.push({nombre,completado})
             state.tareas = filterState
-        },
-        filtrar: (state,action) => {
-            if (action.payload === 'completados') {
-                state.tareas.filter(tarea => tarea.completado)
-            } else if (action.payload === 'incompletos'){
-                state.tareas.filter(tarea => tarea.completado === false)
-            } 
-        }
+        }  
     }
 })
 
-export const {agregarTarea, eliminarTarea, cambiarEstado, filtrar} = sliceLista.actions
+export const {agregarTarea, eliminarTarea, cambiarEstado} = sliceLista.actions
 export default sliceLista.reducer

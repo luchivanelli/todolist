@@ -1,6 +1,6 @@
 const Title = ()=> {
     return (
-        <h1>Lista de tareas</h1>
+        <h1 className='titulo' >Lista de tareas</h1>
     )
 }
 
