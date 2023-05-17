@@ -52,12 +52,12 @@ const Lista = ()=> {
                 <input type="text" value={value} onChange={handleChange}/>
                 <button onClick={agregar}>+ Agregar</button>
             </div>
+            <p className='seccion__info'>Presione sobre una tarea para marcala como completada. Si quiere desmarcarla, presione nuevamente</p>
             <div className='seccion__filtros'>
                 <button onClick={()=> filtrar('completados')}>✔ Completados</button>
                 <button onClick={()=> filtrar('incompletos')}>✘ Incompletos</button>
                 <button onClick={()=> filtrar('')}>➤ Mostrar todos</button>
             </div>
-            <p className='seccion__info'>Presione sobre una tarea para marcala como completada. Si quiere desmarcarla, presione nuevamente</p>
             <ul className='seccion__tareas'>
                 {lista.tareas.map(tarea => {
                     if (tarea.completado) {
